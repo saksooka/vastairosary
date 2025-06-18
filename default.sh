@@ -90,7 +90,7 @@ NODES=(
     "https://github.com/ssitu/ComfyUI_UltimateSDUpscale"
     "https://github.com/chflame163/ComfyUI_LayerStyle_Advance"
     "https://github.com/siliconflow/BizyAir" 
-    "https://github.com/11dogzi/Comfyui-ergouzi-DGNJD"
+    "https://github.com/11dogzi/Comfyui-ergouzi-Nodes"
 )
 
 WORKFLOWS=(
