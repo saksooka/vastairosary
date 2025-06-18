@@ -114,6 +114,8 @@ huggingface-cli download Ultimatech/rosary flux-controlnet-canny.safetensors  --
 huggingface-cli download Ultimatech/rosary xinsir_controlnet-depth-sdxl-1.0.safetensors  --repo-type dataset --local-dir ${COMFYUI_DIR}/models/controlnet/
 huggingface-cli download Ultimatech/rosary segmentation_mask_brushnet_ckpt_sdxl_v1-20250329T134055Z-001/segmentation_mask_brushnet_ckpt_sdxl_v1/diffusion_pytorch_model.safetensors  --repo-type dataset --local-dir ${COMFYUI_DIR}/models/inpaint/
 
+huggingface-cli download lllyasviel/ic-light iclight_sd15_fc.safetensors --local-dir ${COMFYUI_DIR}/models/unet/
+
 mkdir -p ${COMFYUI_DIR}/models/BiRefNet/BiRefNet-General
 cd ${COMFYUI_DIR}/models/BiRefNet/BiRefNet-General
 
@@ -188,7 +190,7 @@ NODES=(
     "https://github.com/ssitu/ComfyUI_UltimateSDUpscale"
     "https://github.com/chflame163/ComfyUI_LayerStyle_Advance"
     "https://github.com/siliconflow/BizyAir" 
-    "https://github.com/11dogzi/Comfyui-ergouzi-Nodes"
+    "https://github.com/11dogzi/Comfyui-ergouzi-DGNJD"
 )
 
 WORKFLOWS=(
@@ -197,6 +199,7 @@ WORKFLOWS=(
 
 CHECKPOINT_MODELS=(
     "https://civitai.com/api/download/models/798204?type=Model&format=SafeTensor&size=full&fp=fp16"
+    "https://civitai.com/api/download/models/176425?type=Model&format=SafeTensor&size=pruned&fp=fp16"
 )
 
 UNET_MODELS=(
