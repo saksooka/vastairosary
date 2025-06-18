@@ -16,6 +16,104 @@ huggingface-cli download jasperai/LBM_relighting model.safetensors --local-dir $
 huggingface-cli download city96/FLUX.1-dev-gguf flux1-dev-Q8_0.gguf --local-dir ${COMFYUI_DIR}/models/diffusion_models/
 huggingface-cli download city96/t5-v1_1-xxl-encoder-gguf t5-v1_1-xxl-encoder-Q8_0.gguf --local-dir ${COMFYUI_DIR}/models/clip/
 
+huggingface-cli download Ultimatech/rosary 8StepsCreartHyperFlux_creartUltimate.safetensors  --repo-type dataset --local-dir ${COMFYUI_DIR}/models/unet/
+huggingface-cli download Ultimatech/rosary rosary_flux.safetensors  --repo-type dataset --local-dir ${COMFYUI_DIR}/models/loras/
+
+huggingface-cli download xinsir/controlnet-openpose-sdxl-1.0 diffusion_pytorch_model.safetensors --local-dir ${COMFYUI_DIR}/models/controlnet/
+mv ${COMFYUI_DIR}/models/controlnet/diffusion_pytorch_model.safetensors ${COMFYUI_DIR}/models/controlnet/xinsir-ontrolnet-openpose-sdxl-1.0.safetensors
+
+
+huggingface-cli download xinsir/controlnet-openpose-sdxl-1.0 diffusion_pytorch_model_twins.safetensors --local-dir ${COMFYUI_DIR}/models/controlnet/
+mv ${COMFYUI_DIR}/models/controlnet/diffusion_pytorch_model_twins.safetensors ${COMFYUI_DIR}/models/controlnet/xinsir-ontrolnet-openpose-sdxl-1.0_twins.safetensors
+
+
+
+huggingface-cli download xinsir/controlnet-depth-sdxl-1.0 diffusion_pytorch_model.safetensors --local-dir ${COMFYUI_DIR}/models/controlnet/
+mv ${COMFYUI_DIR}/models/controlnet/diffusion_pytorch_model.safetensors ${COMFYUI_DIR}/models/controlnet/controlnet-depth-sdxl-1.0.safetensors
+
+
+huggingface-cli download Comfy-Org/flux1-dev flux1-dev-fp8.safetensors --local-dir ${COMFYUI_DIR}/models/unet/
+
+
+huggingface-cli download comfyanonymous/flux_text_encoders --local-dir ${COMFYUI_DIR}/models/clip/
+
+
+huggingface-cli download Kijai/DepthAnythingV2-safetensors --local-dir ${COMFYUI_DIR}/models/depthanything
+
+
+huggingface-cli download black-forest-labs/FLUX.1-Redux-dev flux1-redux-dev.safetensors --local-dir ${COMFYUI_DIR}/models/style_models/
+
+huggingface-cli download black-forest-labs/FLUX.1-schnell ae.safetensors --local-dir ${COMFYUI_DIR}/models/vae/
+
+
+
+huggingface-cli download h94/IP-Adapter --local-dir ${COMFYUI_DIR}/models/ipadapter/
+
+huggingface-cli download h94/IP-Adapter-FaceID --local-dir ${COMFYUI_DIR}/models/ipadapter/
+
+cp ${COMFYUI_DIR}/models/ipadapter/ip-adapter-faceid_sd15_lora.safetensors ${COMFYUI_DIR}/models/loras/
+cp ${COMFYUI_DIR}/models/ipadapter/ip-adapter-faceid-plusv2_sd15_lora.safetensors ${COMFYUI_DIR}/models/loras/
+cp ${COMFYUI_DIR}/models/ipadapter/ip-adapter-faceid_sdxl_lora.safetensors ${COMFYUI_DIR}/models/loras/
+cp ${COMFYUI_DIR}/models/ipadapter/ip-adapter-faceid-plusv2_sdxl_lora.safetensors ${COMFYUI_DIR}/models/loras/
+cp ${COMFYUI_DIR}/models/ipadapter/ip-adapter-faceid-plus_sd15_lora.safetensors ${COMFYUI_DIR}/models/loras/
+
+
+huggingface-cli download laion/CLIP-ViT-H-14-laion2B-s32B-b79K model.safetensors --local-dir ${COMFYUI_DIR}/models/clip_vision/
+
+mv ${COMFYUI_DIR}/models/clip_vision/model.safetensors ${COMFYUI_DIR}/models/clip_vision/CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors
+
+#CLIP-ViT-bigG-14-laion2B-39B-b160k.safetensors is inside  /workspace/ComfyUI/models/ipadapter/sdxl_models/image_encoder/model.safetensors
+
+cp ComfyUI/models/ipadapter/sdxl_models/image_encoder/model.safetensors ComfyUI/models/clip_vision/
+mv ${COMFYUI_DIR}/models/clip_vision/model.safetensors ${COMFYUI_DIR}/models/clip_vision/CLIP-ViT-bigG-14-laion2B-39B-b160k.safetensors
+
+huggingface-cli download HCMUE-Research/SAM-vit-h sam_vit_h_4b8939.pth --local-dir ${COMFYUI_DIR}/models/sams/
+
+huggingface-cli download techparasite/necklace IC_TRY_ON_v3_e4.safetensors --local-dir ${COMFYUI_DIR}/models/loras/
+
+huggingface-cli download techparasite/necklace sigclip_vision_patch14_384.safetensors --local-dir ${COMFYUI_DIR}/models/clip_vision/
+
+huggingface-cli download techparasite/necklace XL_Apex_XL_v4.safetensors --local-dir ${COMFYUI_DIR}/models/checkpoints/
+
+huggingface-cli download techparasite/necklace vitmatte-20250323T105902Z-001.zip --local-dir ${COMFYUI_DIR}/models/vitmatte/
+unzip ${COMFYUI_DIR}/models/vitmatte/vitmatte-20250323T105902Z-001.zip -d ${COMFYUI_DIR}/models/vitmatte/
+
+huggingface-cli download techparasite/necklace segmentation_mask_brushnet_ckpt_sdxl_v0-20240907T113638Z-001-20250323T105307Z-001.zip --local-dir ${COMFYUI_DIR}/models/inpaint/
+unzip ${COMFYUI_DIR}/models/inpaint/segmentation_mask_brushnet_ckpt_sdxl_v0-20240907T113638Z-001-20250323T105307Z-001.zip -d ${COMFYUI_DIR}/models/inpaint/
+
+huggingface-cli download techparasite/necklace XL_Apex_XL_v4.safetensors --local-dir ${COMFYUI_DIR}/models/checkpoints/
+
+huggingface-cli download Kijai/WanVideo_comfy Wan2_1-I2V-14B-720P_fp8_e4m3fn.safetensors --local-dir ${COMFYUI_DIR}/models/unet/
+huggingface-cli download Kijai/WanVideo_comfy Wan2_1_VAE_fp32.safetensors --local-dir ${COMFYUI_DIR}/models/vae/
+
+huggingface-cli download Kijai/WanVideo_comfy Wan2_1_VAE_bf16.safetensors --local-dir ${COMFYUI_DIR}/models/vae/
+huggingface-cli download Kijai/WanVideo_comfy open-clip-xlm-roberta-large-vit-huge-14_visual_fp16.safetensors --local-dir ${COMFYUI_DIR}/models/clip/
+
+huggingface-cli download Kijai/WanVideo_comfy umt5-xxl-enc-bf16.safetensors --local-dir ${COMFYUI_DIR}/models/clip/
+
+huggingface-cli download gemasai/4x_NMKD-Siax_200k --local-dir ${COMFYUI_DIR}/models/upscale_models/
+
+huggingface-cli download Comfy-Org/Wan_2.1_ComfyUI_repackaged split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors --local-dir ${COMFYUI_DIR}/models/clip/
+
+huggingface-cli download Comfy-Org/Wan_2.1_ComfyUI_repackaged split_files/clip_vision/clip_vision_h.safetensors --local-dir ${COMFYUI_DIR}/models/clip_vision/
+
+huggingface-cli download Comfy-Org/Wan_2.1_ComfyUI_repackaged split_files/vae/wan_2.1_vae.safetensors --local-dir ${COMFYUI_DIR}/models/vae/
+
+huggingface-cli download jasperai/LBM_relighting model.safetensors  --repo-type dataset --local-dir ${COMFYUI_DIR}/models/diffusion_models/
+
+huggingface-cli download Ultimatech/rosary rosary_xl-000008.safetensors  --repo-type dataset --local-dir ${COMFYUI_DIR}/models/loras/
+huggingface-cli download Ultimatech/rosary "ACE++ Subject图案迁移.safetensors"  --repo-type dataset --local-dir ${COMFYUI_DIR}/models/loras/
+huggingface-cli download Ultimatech/rosary "【摸鱼】商业写实渲染 _ 电商产品场景 _V1.safetensors"  --repo-type dataset --local-dir ${COMFYUI_DIR}/models/loras/
+
+huggingface-cli download Ultimatech/rosary "真境写真XL Elite KV _ 电商产品摄影海报视觉设计_VisionX Elite.safetensors"  --repo-type dataset --local-dir ${COMFYUI_DIR}/models/checkpoints/
+huggingface-cli download Ultimatech/rosary flex1_redux_siglip2_512.safetensors  --repo-type dataset --local-dir ${COMFYUI_DIR}/models/style_models/
+huggingface-cli download Ultimatech/rosary siglip2_so400m_patch16_512.safetensors  --repo-type dataset --local-dir ${COMFYUI_DIR}/models/clip_vision/
+
+huggingface-cli download Ultimatech/rosary xinsir_controlnet-canny-sdxl-1.0_v2.safetensors  --repo-type dataset --local-dir ${COMFYUI_DIR}/models/controlnet/
+huggingface-cli download Ultimatech/rosary flux-controlnet-canny.safetensors  --repo-type dataset --local-dir ${COMFYUI_DIR}/models/controlnet/
+huggingface-cli download Ultimatech/rosary xinsir_controlnet-depth-sdxl-1.0.safetensors  --repo-type dataset --local-dir ${COMFYUI_DIR}/models/controlnet/
+huggingface-cli download Ultimatech/rosary segmentation_mask_brushnet_ckpt_sdxl_v1-20250329T134055Z-001/segmentation_mask_brushnet_ckpt_sdxl_v1/diffusion_pytorch_model.safetensors  --repo-type dataset --local-dir ${COMFYUI_DIR}/models/inpaint/
+
 mkdir -p ${COMFYUI_DIR}/models/BiRefNet/BiRefNet-General
 cd ${COMFYUI_DIR}/models/BiRefNet/BiRefNet-General
 
