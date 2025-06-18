@@ -12,6 +12,10 @@ export HF_HUB_ENABLE_HF_TRANSFER=1
 pip install -U accelerate==0.32.0
 COMFYUI_DIR=${WORKSPACE}/ComfyUI
 
+huggingface-cli download jasperai/LBM_relighting model.safetensors --local-dir ${COMFYUI_DIR}/models/diffusion_models/
+huggingface-cli download city96/FLUX.1-dev-gguf flux1-dev-Q8_0.gguf --local-dir ${COMFYUI_DIR}/models/diffusion_models/
+huggingface-cli download city96/t5-v1_1-xxl-encoder-gguf t5-v1_1-xxl-encoder-Q8_0.gguf --local-dir ${COMFYUI_DIR}/models/clip/
+
 mkdir -p ${COMFYUI_DIR}/models/BiRefNet/BiRefNet-General
 cd ${COMFYUI_DIR}/models/BiRefNet/BiRefNet-General
 
@@ -39,6 +43,11 @@ wget https://huggingface.co/chflame163/ComfyUI_LayerStyle/resolve/3431cfb15d319c
 wget https://huggingface.co/chflame163/ComfyUI_LayerStyle/resolve/3431cfb15d319c9ca60b940663beb93bedb28b00/ComfyUI/models/BiRefNet/swin_base_patch4_window12_384_22kto1k.pth?download=true
 
 wget https://huggingface.co/chflame163/ComfyUI_LayerStyle/resolve/3431cfb15d319c9ca60b940663beb93bedb28b00/ComfyUI/models/BiRefNet/swin_large_patch4_window12_384_22kto1k.pth?download=true
+
+mkdir -p ${COMFYUI_DIR}/models/BiRefNet/BiRefNet-General/pth
+cd ${COMFYUI_DIR}/models/BiRefNet/BiRefNet-General/pth
+
+wget https://huggingface.co/chflame163/ComfyUI_LayerStyle/resolve/3431cfb15d319c9ca60b940663beb93bedb28b00/ComfyUI/models/BiRefNet/pth/BiRefNet-general-epoch_244.pth?download=true
 
 
 # Packages are installed after nodes so we can fix them...
@@ -80,7 +89,8 @@ NODES=(
     "https://github.com/sipherxyz/comfyui-art-venture"
     "https://github.com/ssitu/ComfyUI_UltimateSDUpscale"
     "https://github.com/chflame163/ComfyUI_LayerStyle_Advance"
-    "https://github.com/siliconflow/BizyAir"    
+    "https://github.com/siliconflow/BizyAir" 
+    "https://github.com/11dogzi/Comfyui-ergouzi-DGNJD"
 )
 
 WORKFLOWS=(
@@ -95,6 +105,7 @@ UNET_MODELS=(
 )
 
 LORA_MODELS=(
+"https://civitai.com/api/download/models/706973?type=Model&format=SafeTensor"
 )
 
 VAE_MODELS=(
