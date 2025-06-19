@@ -12,6 +12,9 @@ export HF_HUB_ENABLE_HF_TRANSFER=1
 pip install -U accelerate==0.32.0
 COMFYUI_DIR=${WORKSPACE}/ComfyUI
 
+huggingface-cli download jasperai/LBM_relighting model.safetensors --local-dir ${COMFYUI_DIR}/models/diffusion_models/
+huggingface-cli download city96/FLUX.1-dev-gguf flux1-dev-Q8_0.gguf --local-dir ${COMFYUI_DIR}/models/diffusion_models/
+huggingface-cli download city96/t5-v1_1-xxl-encoder-gguf t5-v1_1-xxl-encoder-Q8_0.gguf --local-dir ${COMFYUI_DIR}/models/clip/
 
 huggingface-cli download Ultimatech/rosary 8StepsCreartHyperFlux_creartUltimate.safetensors  --repo-type dataset --local-dir ${COMFYUI_DIR}/models/unet/
 huggingface-cli download Ultimatech/rosary rosary_flux.safetensors  --repo-type dataset --local-dir ${COMFYUI_DIR}/models/loras/
@@ -72,27 +75,21 @@ huggingface-cli download techparasite/necklace sigclip_vision_patch14_384.safete
 
 huggingface-cli download techparasite/necklace XL_Apex_XL_v4.safetensors --local-dir ${COMFYUI_DIR}/models/checkpoints/
 
-
 huggingface-cli download techparasite/necklace vitmatte-20250323T105902Z-001.zip --local-dir ${COMFYUI_DIR}/models/vitmatte/
 unzip ${COMFYUI_DIR}/models/vitmatte/vitmatte-20250323T105902Z-001.zip -d ${COMFYUI_DIR}/models/vitmatte/
+
 huggingface-cli download techparasite/necklace segmentation_mask_brushnet_ckpt_sdxl_v0-20240907T113638Z-001-20250323T105307Z-001.zip --local-dir ${COMFYUI_DIR}/models/inpaint/
 unzip ${COMFYUI_DIR}/models/inpaint/segmentation_mask_brushnet_ckpt_sdxl_v0-20240907T113638Z-001-20250323T105307Z-001.zip -d ${COMFYUI_DIR}/models/inpaint/
 
-
 huggingface-cli download techparasite/necklace XL_Apex_XL_v4.safetensors --local-dir ${COMFYUI_DIR}/models/checkpoints/
-
-
-
 
 huggingface-cli download Kijai/WanVideo_comfy Wan2_1-I2V-14B-720P_fp8_e4m3fn.safetensors --local-dir ${COMFYUI_DIR}/models/unet/
 huggingface-cli download Kijai/WanVideo_comfy Wan2_1_VAE_fp32.safetensors --local-dir ${COMFYUI_DIR}/models/vae/
-
 
 huggingface-cli download Kijai/WanVideo_comfy Wan2_1_VAE_bf16.safetensors --local-dir ${COMFYUI_DIR}/models/vae/
 huggingface-cli download Kijai/WanVideo_comfy open-clip-xlm-roberta-large-vit-huge-14_visual_fp16.safetensors --local-dir ${COMFYUI_DIR}/models/clip/
 
 huggingface-cli download Kijai/WanVideo_comfy umt5-xxl-enc-bf16.safetensors --local-dir ${COMFYUI_DIR}/models/clip/
-
 
 huggingface-cli download gemasai/4x_NMKD-Siax_200k --local-dir ${COMFYUI_DIR}/models/upscale_models/
 
@@ -102,11 +99,7 @@ huggingface-cli download Comfy-Org/Wan_2.1_ComfyUI_repackaged split_files/clip_v
 
 huggingface-cli download Comfy-Org/Wan_2.1_ComfyUI_repackaged split_files/vae/wan_2.1_vae.safetensors --local-dir ${COMFYUI_DIR}/models/vae/
 
-
-
-
 huggingface-cli download jasperai/LBM_relighting model.safetensors  --repo-type dataset --local-dir ${COMFYUI_DIR}/models/diffusion_models/
-huggingface-cli download ViperYX/BiRefNet --local-dir ${COMFYUI_DIR}/models/BiRefNet/
 
 huggingface-cli download Ultimatech/rosary rosary_xl-000008.safetensors  --repo-type dataset --local-dir ${COMFYUI_DIR}/models/loras/
 huggingface-cli download Ultimatech/rosary "ACE++ Subject图案迁移.safetensors"  --repo-type dataset --local-dir ${COMFYUI_DIR}/models/loras/
@@ -120,6 +113,42 @@ huggingface-cli download Ultimatech/rosary xinsir_controlnet-canny-sdxl-1.0_v2.s
 huggingface-cli download Ultimatech/rosary flux-controlnet-canny.safetensors  --repo-type dataset --local-dir ${COMFYUI_DIR}/models/controlnet/
 huggingface-cli download Ultimatech/rosary xinsir_controlnet-depth-sdxl-1.0.safetensors  --repo-type dataset --local-dir ${COMFYUI_DIR}/models/controlnet/
 huggingface-cli download Ultimatech/rosary segmentation_mask_brushnet_ckpt_sdxl_v1-20250329T134055Z-001/segmentation_mask_brushnet_ckpt_sdxl_v1/diffusion_pytorch_model.safetensors  --repo-type dataset --local-dir ${COMFYUI_DIR}/models/inpaint/
+
+huggingface-cli download lllyasviel/ic-light iclight_sd15_fc.safetensors --local-dir ${COMFYUI_DIR}/models/unet/
+
+mkdir -p ${COMFYUI_DIR}/models/BiRefNet/BiRefNet-General
+cd ${COMFYUI_DIR}/models/BiRefNet/BiRefNet-General
+
+wget https://huggingface.co/ZhengPeng7/BiRefNet/resolve/main/birefnet.py
+wget https://huggingface.co/ZhengPeng7/BiRefNet/resolve/main/BiRefNet_config.py
+wget https://huggingface.co/ZhengPeng7/BiRefNet/resolve/main/handler.py
+
+wget https://huggingface.co/ZhengPeng7/BiRefNet/resolve/main/config.json
+wget https://huggingface.co/ZhengPeng7/BiRefNet/resolve/main/requirements.txt
+
+wget https://huggingface.co/ZhengPeng7/BiRefNet/resolve/main/model.safetensors -O model.safetensors
+
+wget https://huggingface.co/ZhengPeng7/BiRefNet/resolve/main/handler.py?download=true
+
+wget https://huggingface.co/ZhengPeng7/BiRefNet/resolve/main/.gitattributes?download=true
+
+wget https://huggingface.co/ZhengPeng7/BiRefNet/resolve/main/.gitignore?download=true
+
+wget https://huggingface.co/chflame163/ComfyUI_LayerStyle/resolve/3431cfb15d319c9ca60b940663beb93bedb28b00/ComfyUI/models/BiRefNet/BiRefNet-ep480.pth?download=true
+
+wget https://huggingface.co/chflame163/ComfyUI_LayerStyle/resolve/3431cfb15d319c9ca60b940663beb93bedb28b00/ComfyUI/models/BiRefNet/pvt_v2_b2.pth?download=true
+
+wget https://huggingface.co/chflame163/ComfyUI_LayerStyle/resolve/3431cfb15d319c9ca60b940663beb93bedb28b00/ComfyUI/models/BiRefNet/pvt_v2_b5.pth?download=true
+
+wget https://huggingface.co/chflame163/ComfyUI_LayerStyle/resolve/3431cfb15d319c9ca60b940663beb93bedb28b00/ComfyUI/models/BiRefNet/swin_base_patch4_window12_384_22kto1k.pth?download=true
+
+wget https://huggingface.co/chflame163/ComfyUI_LayerStyle/resolve/3431cfb15d319c9ca60b940663beb93bedb28b00/ComfyUI/models/BiRefNet/swin_large_patch4_window12_384_22kto1k.pth?download=true
+
+mkdir -p ${COMFYUI_DIR}/models/BiRefNet/BiRefNet-General/pth
+cd ${COMFYUI_DIR}/models/BiRefNet/BiRefNet-General/pth
+
+wget https://huggingface.co/chflame163/ComfyUI_LayerStyle/resolve/3431cfb15d319c9ca60b940663beb93bedb28b00/ComfyUI/models/BiRefNet/pth/BiRefNet-general-epoch_244.pth?download=true
+
 
 # Packages are installed after nodes so we can fix them...
 
@@ -160,7 +189,8 @@ NODES=(
     "https://github.com/sipherxyz/comfyui-art-venture"
     "https://github.com/ssitu/ComfyUI_UltimateSDUpscale"
     "https://github.com/chflame163/ComfyUI_LayerStyle_Advance"
-    "https://github.com/siliconflow/BizyAir"    
+    "https://github.com/siliconflow/BizyAir" 
+    "https://github.com/11dogzi/Comfyui-ergouzi-DGNJD"
 )
 
 WORKFLOWS=(
@@ -169,12 +199,14 @@ WORKFLOWS=(
 
 CHECKPOINT_MODELS=(
     "https://civitai.com/api/download/models/798204?type=Model&format=SafeTensor&size=full&fp=fp16"
+    "https://civitai.com/api/download/models/176425?type=Model&format=SafeTensor&size=pruned&fp=fp16"
 )
 
 UNET_MODELS=(
 )
 
 LORA_MODELS=(
+"https://civitai.com/api/download/models/706973?type=Model&format=SafeTensor"
 )
 
 VAE_MODELS=(
