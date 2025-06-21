@@ -104,6 +104,8 @@ huggingface-cli download Ultimatech/rosary segmentation_mask_brushnet_ckpt_sdxl_
 
 huggingface-cli download camenduru/FLUX.1-dev FLUX.1-Turbo-Alpha.safetensors --local-dir ${COMFYUI_DIR}/models/diffusion_models/
 huggingface-cli download EClipX/T5-Models clipLCLIPGFullFP32_zer0intVisionCLIPL.safetensors --local-dir ${COMFYUI_DIR}/models/clip/
+huggingface-cli download zer0int/CLIP-GmP-ViT-L-14 ViT-L-14-BEST-smooth-GmP-TE-only-HF-format.safetensors --local-dir ${COMFYUI_DIR}/models/clip/
+
 
 huggingface-cli download mit-han-lab/svdq-int4-flux.1-dev transformer_blocks.safetensors --local-dir ${COMFYUI_DIR}/models/checkpoints/
 mv ${COMFYUI_DIR}/models/models/checkpoints/transformer_blocks.safetensors ${COMFYUI_DIR}/models/models/checkpoints/svdq-int4-flux.1-dev
