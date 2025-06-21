@@ -102,6 +102,12 @@ huggingface-cli download Ultimatech/rosary flux-controlnet-canny.safetensors  --
 huggingface-cli download Ultimatech/rosary xinsir_controlnet-depth-sdxl-1.0.safetensors  --repo-type dataset --local-dir ${COMFYUI_DIR}/models/controlnet/
 huggingface-cli download Ultimatech/rosary segmentation_mask_brushnet_ckpt_sdxl_v1-20250329T134055Z-001/segmentation_mask_brushnet_ckpt_sdxl_v1/diffusion_pytorch_model.safetensors  --repo-type dataset --local-dir ${COMFYUI_DIR}/models/inpaint/
 
+huggingface-cli download camenduru/FLUX.1-dev FLUX.1-Turbo-Alpha.safetensors --local-dir ${COMFYUI_DIR}/models/diffusion_models/
+huggingface-cli download EClipX/T5-Models clipLCLIPGFullFP32_zer0intVisionCLIPL.safetensors --local-dir ${COMFYUI_DIR}/models/clip/
+
+mit-han-lab/svdq-int4-flux.1-dev transformer_blocks.safetensors --local-dir ${COMFYUI_DIR}/models/checkpoints/
+mv ${COMFYUI_DIR}/models/models/checkpoints/transformer_blocks.safetensors ${COMFYUI_DIR}/models/models/checkpoints/svdq-int4-flux.1-dev
+
 
 # Packages are installed after nodes so we can fix them...
 
@@ -149,7 +155,6 @@ NODES=(
     "https://github.com/kaibioinfo/ComfyUI_AdvancedRefluxControl"
     "https://github.com/chrisgoringe/cg-use-everywhere"
     "https://github.com/Jonseed/ComfyUI-Detail-Daemon"
-    "https://github.com/mit-han-lab/ComfyUI-nunchaku"
     "https://github.com/city96/ComfyUI-GGUF"
     
 )
