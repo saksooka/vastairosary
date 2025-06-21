@@ -112,6 +112,9 @@ mv ${COMFYUI_DIR}/models/models/checkpoints/transformer_blocks.safetensors ${COM
 huggingface-cli download aleksa-codes/flux-ghibsky-illustration lora_v2.safetensors --local-dir ${COMFYUI_DIR}/models/loras/
 huggingface-cli download mit-han-lab/nunchaku-flux.1-dev svdq-fp4_r32-flux.1-dev.safetensors --local-dir ${COMFYUI_DIR}/models/diffusion_models/
 
+huggingface-cli download ali-vilab/ACE_Plus subject/comfyui_subject_lora16.safetensors --local-dir ${COMFYUI_DIR}/models/loras/
+huggingface-cli download ali-vilab/ACE_Plus portrait/comfyui_portrait_lora64.safetensors --local-dir ${COMFYUI_DIR}/models/loras/
+huggingface-cli download ali-vilab/ACE_Plus local_editing/comfyui_local_lora16.safetensors --local-dir ${COMFYUI_DIR}/models/loras/
 
 
 # Packages are installed after nodes so we can fix them...
@@ -162,6 +165,7 @@ NODES=(
     "https://github.com/Jonseed/ComfyUI-Detail-Daemon"
     "https://github.com/city96/ComfyUI-GGUF"
     "https://github.com/mit-han-lab/nunchaku/releases/download/v0.2.0/nunchaku-0.3.1+torch2.7-cp311-cp311-linux_x86_64.whl"
+    "https://github.com/ali-vilab/ACE_plus.git"
 
     
 )
