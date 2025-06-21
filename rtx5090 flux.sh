@@ -105,8 +105,13 @@ huggingface-cli download Ultimatech/rosary segmentation_mask_brushnet_ckpt_sdxl_
 huggingface-cli download camenduru/FLUX.1-dev FLUX.1-Turbo-Alpha.safetensors --local-dir ${COMFYUI_DIR}/models/diffusion_models/
 huggingface-cli download EClipX/T5-Models clipLCLIPGFullFP32_zer0intVisionCLIPL.safetensors --local-dir ${COMFYUI_DIR}/models/clip/
 
-mit-han-lab/svdq-int4-flux.1-dev transformer_blocks.safetensors --local-dir ${COMFYUI_DIR}/models/checkpoints/
+huggingface-cli download mit-han-lab/svdq-int4-flux.1-dev transformer_blocks.safetensors --local-dir ${COMFYUI_DIR}/models/checkpoints/
 mv ${COMFYUI_DIR}/models/models/checkpoints/transformer_blocks.safetensors ${COMFYUI_DIR}/models/models/checkpoints/svdq-int4-flux.1-dev
+
+
+huggingface-cli download aleksa-codes/flux-ghibsky-illustration lora_v2.safetensors --local-dir ${COMFYUI_DIR}/models/loras/
+huggingface-cli download mit-han-lab/nunchaku-flux.1-dev svdq-fp4_r32-flux.1-dev.safetensors --local-dir ${COMFYUI_DIR}/models/diffusion_models/
+
 
 
 # Packages are installed after nodes so we can fix them...
