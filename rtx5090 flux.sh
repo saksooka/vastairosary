@@ -156,6 +156,8 @@ NODES=(
     "https://github.com/chrisgoringe/cg-use-everywhere"
     "https://github.com/Jonseed/ComfyUI-Detail-Daemon"
     "https://github.com/city96/ComfyUI-GGUF"
+    "https://github.com/mit-han-lab/nunchaku/releases/download/v0.2.0/nunchaku-0.3.1+torch2.7-cp311-cp311-linux_x86_64.whl"
+
     
 )
 
