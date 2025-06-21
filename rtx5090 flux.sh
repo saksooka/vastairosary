@@ -142,6 +142,16 @@ NODES=(
     "https://github.com/sipherxyz/comfyui-art-venture"
     "https://github.com/ssitu/ComfyUI_UltimateSDUpscale"
     "https://github.com/chflame163/ComfyUI_LayerStyle_Advance"
+    "https://github.com/TheLustriVA/ComfyUI-Image-Size-Tool"
+    "https://github.com/chengzeyi/Comfy-WaveSpeed"
+    "https://github.com/gseth/ControlAltAI-Nodes"
+    "https://github.com/giriss/comfy-image-saver"
+    "https://github.com/kaibioinfo/ComfyUI_AdvancedRefluxControl"
+    "https://github.com/chrisgoringe/cg-use-everywhere"
+    "https://github.com/Jonseed/ComfyUI-Detail-Daemon"
+    "https://github.com/mit-han-lab/ComfyUI-nunchaku"
+    "https://github.com/city96/ComfyUI-GGUF"
+    
 )
 
 WORKFLOWS=(
