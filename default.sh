@@ -116,6 +116,8 @@ huggingface-cli download Ultimatech/rosary segmentation_mask_brushnet_ckpt_sdxl_
 
 huggingface-cli download lllyasviel/ic-light iclight_sd15_fc.safetensors --local-dir ${COMFYUI_DIR}/models/unet/
 
+huggingface-cli download GreenGrape/231209 majicmixRealistic_v7.safetensors --local-dir ${COMFYUI_DIR}/models/checkpoints/
+
 mkdir -p ${COMFYUI_DIR}/models/BiRefNet/BiRefNet-General
 cd ${COMFYUI_DIR}/models/BiRefNet/BiRefNet-General
 
