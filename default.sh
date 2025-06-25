@@ -193,6 +193,7 @@ NODES=(
     "https://github.com/chflame163/ComfyUI_LayerStyle_Advance"
     "https://github.com/siliconflow/BizyAir" 
     "https://github.com/11dogzi/Comfyui-ergouzi-DGNJD"
+    "https://github.com/M1kep/ComfyLiterals"
 )
 
 WORKFLOWS=(
