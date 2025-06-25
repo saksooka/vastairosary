@@ -194,6 +194,7 @@ NODES=(
     "https://github.com/siliconflow/BizyAir" 
     "https://github.com/11dogzi/Comfyui-ergouzi-DGNJD"
     "https://github.com/M1kep/ComfyLiterals"
+    "https://github.com/ltdrdata/ComfyUI-Inspire-Pack"
 )
 
 WORKFLOWS=(
