@@ -205,22 +205,15 @@ NODES=(
 )
 
 WORKFLOWS=(
-
 )
 
 CHECKPOINT_MODELS=(
-wget "https://civitai.com/api/download/models/798204?type=Model&format=SafeTensor&size=full&fp=fp16=$CIVITAI_TOKEN
-"
-wget "https://civitai.com/api/download/models/176425?type=Model&format=SafeTensor&size=pruned&fp=fp16=$CIVITAI_TOKEN
-"
 )
 
 UNET_MODELS=(
 )
 
 LORA_MODELS=(
-wget "https://civitai.com/api/download/models/706973?type=Model&format=SafeTensor=$CIVITAI_TOKEN
-"
 )
 
 VAE_MODELS=(
