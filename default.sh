@@ -151,6 +151,13 @@ cd ${COMFYUI_DIR}/models/BiRefNet/BiRefNet-General/pth
 
 wget https://huggingface.co/chflame163/ComfyUI_LayerStyle/resolve/3431cfb15d319c9ca60b940663beb93bedb28b00/ComfyUI/models/BiRefNet/pth/BiRefNet-general-epoch_244.pth?download=true
 
+cd ${COMFYUI_DIR}/models/checkpoints && wget "https://civitai.com/api/download/models/798204?type=Model&format=SafeTensor&size=full&fp=fp16=$CIVITAI_TOKEN
+"
+cd ${COMFYUI_DIR}/models/checkpoints && wget "https://civitai.com/api/download/models/176425?type=Model&format=SafeTensor&size=pruned&fp=fp16=$CIVITAI_TOKEN
+"
+cd ${COMFYUI_DIR}/models/loras && wget "https://civitai.com/api/download/models/706973?type=Model&format=SafeTensor=$CIVITAI_TOKEN
+"
+
 
 # Packages are installed after nodes so we can fix them...
 
