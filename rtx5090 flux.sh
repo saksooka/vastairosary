@@ -119,6 +119,7 @@ huggingface-cli download ali-vilab/ACE_Plus portrait/comfyui_portrait_lora64.saf
 huggingface-cli download ali-vilab/ACE_Plus local_editing/comfyui_local_lora16.safetensors --local-dir ${COMFYUI_DIR}/models/loras/
 huggingface-cli download jackzheng/flux-fill-FP8 fluxFillFP8_v10.safetensors --local-dir ${COMFYUI_DIR}/models/diffusion_models/
 
+huggingface-cli download Comfy-Org/flux1-kontext-dev_ComfyUI split_files/diffusion_models --local-dir ${COMFYUI_DIR}/models/diffusion_models/
 
 # Packages are installed after nodes so we can fix them...
 
