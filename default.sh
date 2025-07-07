@@ -120,6 +120,7 @@ huggingface-cli download Comfy-Org/flux1-dev flux1-dev-fp8.safetensors --local-d
 huggingface-cli download lllyasviel/ic-light iclight_sd15_fc.safetensors --local-dir ${COMFYUI_DIR}/models/unet/
 
 huggingface-cli download GreenGrape/231209 majicmixRealistic_v7.safetensors --local-dir ${COMFYUI_DIR}/models/checkpoints/
+huggingface-cli download lokCX/4x-Ultrasharp 4x-UltraSharp.pth  --local-dir ${COMFYUI_DIR}/models/upscale_models/
 
 mkdir -p ${COMFYUI_DIR}/models/BiRefNet/BiRefNet-General
 cd ${COMFYUI_DIR}/models/BiRefNet/BiRefNet-General
