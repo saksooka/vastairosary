@@ -114,6 +114,9 @@ huggingface-cli download Ultimatech/rosary flux-controlnet-canny.safetensors  --
 huggingface-cli download Ultimatech/rosary xinsir_controlnet-depth-sdxl-1.0.safetensors  --repo-type dataset --local-dir ${COMFYUI_DIR}/models/controlnet/
 huggingface-cli download Ultimatech/rosary segmentation_mask_brushnet_ckpt_sdxl_v1-20250329T134055Z-001/segmentation_mask_brushnet_ckpt_sdxl_v1/diffusion_pytorch_model.safetensors  --repo-type dataset --local-dir ${COMFYUI_DIR}/models/inpaint/
 
+huggingface-cli flux_realism_lora.safetensors flux_realism_lora.safetensors  --repo-type dataset --local-dir ${COMFYUI_DIR}/models/loras/
+huggingface-cli download Comfy-Org/flux1-dev flux1-dev-fp8.safetensors --local-dir ${COMFYUI_DIR}/models/checkpoints/
+
 huggingface-cli download lllyasviel/ic-light iclight_sd15_fc.safetensors --local-dir ${COMFYUI_DIR}/models/unet/
 
 huggingface-cli download GreenGrape/231209 majicmixRealistic_v7.safetensors --local-dir ${COMFYUI_DIR}/models/checkpoints/
